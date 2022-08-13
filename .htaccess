@@ -1,0 +1,10 @@
+allow from all
+#AddType application/x-web-app-manifest+json .webapp
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/xml application/rss+xml
+</IfModule>
+
+# REDIRECTIONS
+RewriteEngine on
+RewriteRule proxy/(.*) proxy.php?url=$1 [L]
