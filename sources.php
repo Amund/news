@@ -19,7 +19,6 @@ return [
     'Développement (général)' => [
         'Mozilla Hacks' => 'https://hacks.mozilla.org/feed/',
         'Mozilla Gfx' => 'https://mozillagfx.wordpress.com/feed/',
-        'Filament Group' => 'https://www.filamentgroup.com/lab/atom.xml',
         'alsacreations' => 'http://www.alsacreations.com/rss/actualites.xml',
         'A list apart' => 'https://alistapart.com/main/feed',
         'quirksmode' => 'http://www.quirksmode.org/blog/atom.xml',
