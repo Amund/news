@@ -104,6 +104,14 @@
         color: var(--color-visited);
       }
 
+      .flux.error {
+        opacity: 0.5;
+      }
+
+      .flux.error h3 {
+        text-decoration: line-through;
+      }
+
       .flux h3::after {
         content: '';  
         width: 15%;
@@ -144,6 +152,39 @@
         }
       })
 
+      const loadFlux = async function(flux) {
+        const url = `proxy/${btoa(flux.dataset.url)}`
+        const name = flux.dataset.name
+        try {
+          const response = await fetch(url)
+          const text = await response.text()
+          const xml = new DOMParser().parseFromString(text, 'text/xml')
+          if (xml?.querySelector('parsererror')) {
+            throw new Error('xml')
+          }
+          const entries = Array.from(xml.querySelectorAll('item, entry')).slice(0, num)
+          for(const entry of entries) {
+            const title = entry.querySelector('title')?.textContent || '[Title not found]'
+            let link = entry.querySelector('link')?.textContent
+            if( link === '') {
+              link = entry.querySelector('link').getAttribute('href')
+            }
+            flux.innerHTML += `<a href="${link}">${title}</a>`
+          }
+        } catch(e) {
+          let message
+          if(e.message === 'xml') {
+            message = `Erreur XML dans le flux ${name}`
+          } else {
+            message = `Erreur de chargement pour ${name}`
+          }
+          console.info(message)
+          flux.classList.add('error')
+        } finally {
+          flux.dataset.loaded = 'true'
+        }
+      }
+
       const load = async function () {
         document.body.innerHTML = ''
 
@@ -155,29 +196,11 @@
           document.body.innerHTML += `<div class="categorie"><h2>${categorie}</h2>${rssElements.join('')}</div>`
         }
 
+        const calls = []
         for(const flux of document.querySelectorAll('.flux')) {
-          const url = `proxy/${btoa(flux.dataset.url)}`
-          try {
-            const response = await fetch(url)
-            const text = await response.text()
-            const xml = new window.DOMParser().parseFromString(text, 'text/xml')
-            const entries = Array.from(xml.querySelectorAll('item, entry')).slice(0, num)
-            for(const entry of entries) {
-              const title = entry.querySelector('title')?.textContent || '[Title not found]'
-              let link = entry.querySelector('link')?.textContent
-              if( link === '') {
-                link = entry.querySelector('link').getAttribute('href')
-              }
-              flux.innerHTML += `<a href="${link}">${title}</a>`
-            }
-          } catch(e) {
-            flux.innerHTML += '<div class="error>Erreur de chargement</div>'
-            console.error(`Erreur de chargement pour ${flux.dataset.name}`)
-          } finally {
-            flux.dataset.loaded = 'true'
-          }
-
+          calls.push(loadFlux(flux))
         }
+        await Promise.allSettled(calls)
       };
 
       document.addEventListener('DOMContentLoaded', load)
