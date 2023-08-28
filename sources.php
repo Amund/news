@@ -31,7 +31,6 @@ return [
         'Wordpress' => 'https://wordpress.org/news/feed/',
         'Wordpress dev' => 'https://developer.wordpress.org/news/feed/',
         'Drupal' => 'https://www.drupal.org/section-blog/2603760/feed',
-        'Drupal8 (Bugs)' => 'https://www.drupal.org/project/issues/search/drupal/rss?status[0]=1&status[1]=13&status[2]=8&status[3]=14&status[4]=4&priorities[0]=400&categories[0]=1&categories[1]=2&categories[2]=5&version[0]=8.x',
         'Spip' => 'http://blog.spip.net/spip.php?page=backend',
         'Symfony' => 'https://feeds.feedburner.com/symfony/blog',
         'Rollup' => 'https://github.com/rollup/rollup/releases.atom',
