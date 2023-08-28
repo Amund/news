@@ -42,7 +42,7 @@ return [
     'Logiciels' => [
         'Capyloon' => 'https://capyloon.org/releases.xml',
         'Deno' => 'https://github.com/denoland/deno/releases.atom',
-        'NodeJS' => 'http://blog.nodejs.org/feed/',
+        'NodeJS' => 'https://nodejs.org/en/feed/blog.xml',
         'Docker' => 'https://www.docker.com/blog/feed/',
         'Rust' => 'https://blog.rust-lang.org/feed.xml',
         'Google Chrome Releases' => 'http://feeds.feedburner.com/GoogleChromeReleases',
