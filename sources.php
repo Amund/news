@@ -22,7 +22,6 @@ return [
         'alsacreations' => 'http://www.alsacreations.com/rss/actualites.xml',
         'A list apart' => 'https://alistapart.com/main/feed',
         'quirksmode' => 'http://www.quirksmode.org/blog/atom.xml',
-        'JavascriptJabber' => 'http://feeds.feedburner.com/JavascriptJabber',
         'mediumequalsmessage.com' => 'http://feeds.feedburner.com/mediumequalsmessage/cwebbdesign',
         'DailyJS' => 'https://medium.com/feed/dailyjs',
         'Javascript Weekly' => 'http://javascriptweekly.com/rss',
