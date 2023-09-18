@@ -2,7 +2,7 @@
 
 return [
     'Actualités' => [
-        'Numérama' => 'https://www.numerama.com/feed/atom',
+        'Numérama' => 'https://www.numerama.com/feed',
         'Presse-citron' => 'http://www.presse-citron.net/feed/',
         'Le journal du Geek' => 'http://www.journaldugeek.com/feed/',
         'Korben' => 'https://korben.info/feed',
