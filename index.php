@@ -67,15 +67,20 @@
         padding: 0;
         background: var(--back-flux);
         border-radius: 10px 0 0;
-        aspect-ratio: 2 / 1;
+        aspect-ratio: 5 / 4;
         overflow: auto;
+        isolation: isolate;
       }
 
       .flux h3 {
-        position: relative;
+        position: sticky;
         margin: 0 0 5px;
         padding: 10px 15px;
+        width: 100%;
+        top: 0;
         border-bottom: 1px dashed var(--color-visited);
+        background: var(--back-flux);
+        z-index: 1;
       }
 
       .flux a {
@@ -84,6 +89,7 @@
         padding: 0 10px 0 30px;
         text-decoration: none;
         color: inherit;
+        text-wrap: pretty;
       }
 
       .flux a:before {
