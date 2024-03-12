@@ -10,7 +10,7 @@
         --back-category: #1d1d1d;
         --color-visited: #555;
         --color-text: #ccc;
-        --gap: clamp(10px, 1.5vw, 20px);
+        --gap: 20px;
         --min-content: 100%;
       }
 
