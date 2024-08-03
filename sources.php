@@ -29,6 +29,7 @@ return [
     'IA' => [
         'Actu IA' => 'https://www.actuia.com/feed/',
         'AI News' => 'https://buttondown.email/ainews/rss',
+        'Artificiellement intelligent' => 'https://artificiellementintelligent.wordpress.com/feed/',
     ],
     'Développement (général)' => [
         'Mozilla Hacks' => 'https://hacks.mozilla.org/feed/',
