@@ -52,7 +52,8 @@ return [
         'Rust' => 'https://blog.rust-lang.org/feed.xml',
     ],
     'Logiciels' => [
-        'Capyloon' => 'https://capyloon.org/releases.xml',
+        'Ollama' => 'https://github.com/ollama/ollama/releases.atom',
+        'Oumi' => 'https://github.com/oumi-ai/oumi/releases.atom',
         'Deno' => 'https://github.com/denoland/deno/releases.atom',
         'Bun' => 'https://github.com/oven-sh/bun/releases.atom',
         'NodeJS' => 'https://nodejs.org/en/feed/blog.xml',
