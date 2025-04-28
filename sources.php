@@ -13,7 +13,7 @@ return [
         'LinuxFR' => 'http://linuxfr.org/news.atom',
         'FrAndroid' => 'https://www.frandroid.com/feed/atom',
         'Le monde informatique' => 'http://www.lemondeinformatique.fr/flux-rss/rss.xml',
-        'Minimachines' => 'http://www.minimachines.net/feed/atom',
+        'Minimachines' => 'https://www.minimachines.net/feed',
     ],
     'Actualités (EN)' => [
         'TechCrunch' => 'https://techcrunch.com/feed/',
@@ -28,7 +28,7 @@ return [
     ],
     'IA' => [
         'Actu IA' => 'https://www.actuia.com/feed/',
-        'AI News' => 'https://buttondown.email/ainews/rss',
+        'AI News' => 'https://news.smol.ai/rss.xml',
         'Artificiellement intelligent' => 'https://artificiellementintelligent.wordpress.com/feed/',
     ],
     'Développement (général)' => [
@@ -43,6 +43,7 @@ return [
     'Développement (techno/lib/framework)' => [
         'Wordpress' => 'https://wordpress.org/news/feed/',
         'Wordpress dev' => 'https://developer.wordpress.org/news/feed/',
+        'ACF (Wordpress)' => 'https://www.advancedcustomfields.com/blog/feed/',
         'Drupal' => 'https://www.drupal.org/section-blog/2603760/feed',
         'Spip' => 'http://blog.spip.net/spip.php?page=backend',
         'Symfony' => 'https://feeds.feedburner.com/symfony/blog',
@@ -53,6 +54,7 @@ return [
     ],
     'Logiciels' => [
         'Ollama' => 'https://github.com/ollama/ollama/releases.atom',
+        'LightningCSS' => 'https://github.com/parcel-bundler/lightningcss/releases.atom',
         'Oumi' => 'https://github.com/oumi-ai/oumi/releases.atom',
         'Deno' => 'https://github.com/denoland/deno/releases.atom',
         'Bun' => 'https://github.com/oven-sh/bun/releases.atom',
