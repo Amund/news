@@ -1,4 +1,7 @@
-allow from all
+# all dot files
+RedirectMatch 404 /\..*$
+
+# allow from all
 #AddType application/x-web-app-manifest+json .webapp
 
 <IfModule mod_deflate.c>
@@ -7,5 +10,4 @@ AddOutputFilterByType DEFLATE text/xml application/rss+xml
 
 # REDIRECTIONS
 RewriteEngine on
-RewriteRule ^\.git.* - [R=404,L]
 RewriteRule proxy/(.*) proxy.php?url=$1 [L]

@@ -1,11 +1,21 @@
 <?php
 
-ob_start();
 ini_set( 'display_errors', 1 );
 
+// load rss content from url
 $url = base64_decode( $_REQUEST['url'] );
 $content = curl_file_get_contents( $url );
-die( $content );
+
+// filter content
+$dom = new DOMDocument();
+$dom->recover = TRUE;
+$dom->loadXML($content);
+$content = $dom->saveXML($dom->documentElement);
+
+// output content
+ob_start();
+header( 'Content-Type: text/xml; charset=utf-8' );
+die($content);
 
 function curl_file_get_contents($url) {
 	$headers = [
@@ -26,17 +36,5 @@ function curl_file_get_contents($url) {
 	$data = curl_exec($ch);
 	curl_close($ch);
 
-	if ($data) return $data;
-		else return FALSE;
-}
-
-function convertToUtf8( $text ) {
-	if( preg_match( '#<\?xml.+encoding=("|\')?([^\1]*)\1.*\?>#i', $text, $matches ) ) {
-		$charset = $matches[2];
-		if( $charset && ( strtoupper( $charset )=='ISO-8859-1' || strtoupper( $charset )=='ISO-8859-15' ) ) {
-			$text = mb_convert_encoding( $text, 'UTF-8', $charset );
-			$text = preg_replace('/<\?xml.+encoding=("|\')?([^\1]*)\1.*\?>/i', '<?xml version="1.0" encoding="UTF-8"?>', $text);
-		}
-	}
-	return $text;
+	return $data;
 }
