@@ -3,7 +3,25 @@
 ini_set( 'display_errors', 1 );
 
 // load rss content from url
-$url = base64_decode( $_REQUEST['url'] );
+$url = base64_decode( $_REQUEST['url'] ?? '' );
+
+// limit proxy to sources urls
+$sources = include './sources.php';
+$valid = false;
+foreach($sources as $category) {
+	foreach($category as $name => $source) {
+		if($source === $url) {
+			$valid = true;
+			break 2;
+		}
+	}
+}
+if(!$valid) {
+	http_response_code(400);
+	die('Invalid URL');
+}
+
+// load content
 $content = curl_file_get_contents( $url );
 
 // filter content
