@@ -6,9 +6,26 @@ No database, no login, no registration, no ads, no tracking, no cookies. Just a 
 
 And if it can help others, so much the better.
 
+## Features
+
+- Just 1 page
+- Reload each feed every 1 hour
+- Responsive
+
 ## Configuration
 
-Modify the `sources.php` file to add your own feeds.
+- Drop files on your server
+- Modify the `sources.php` file to add your own feeds/categories.
+
+## Screenshots
+
+### Mobile
+
+![mobile](img/mobile.png)
+
+### Desktop
+
+![desktop](img/desktop.png)
 
 ## License
 
