@@ -149,7 +149,7 @@
 
   <link rel="shortcut icon" type="image/png" href="rss.png" />
   <script>
-    const maxEntries = 20 // max number of entries to display per flux
+    const maxEntries = 30 // max number of entries to display per flux
     const reloadInterval = 1000 * 60 * 60 // reload every 1 hour
 
     const sources = <?= json_encode(include './sources.php') ?>
