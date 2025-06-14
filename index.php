@@ -148,9 +148,11 @@
 
     <link rel="shortcut icon" type="image/png" href="rss.png" />
     <script>
+      
+      const maxEntries = 20 // max number of entries to display per flux
+      const reloadInterval = 1000 * 60 * 60 // reload every 1 hour
 
-      const sources = <?=json_encode(include './sources.php')?>;
-      const num = 20
+      const sources = <?=json_encode(include './sources.php')?>
 
       document.addEventListener('click', (e)=>{
         if(e.target.tagName === 'A') {
@@ -161,6 +163,7 @@
       const loadFlux = async function(flux) {
         const url = `proxy/${btoa(flux.dataset.url)}`
         const name = flux.dataset.name
+
         try {
           const response = await fetch(url)
           const text = await response.text()
@@ -168,7 +171,20 @@
           if (xml?.querySelector('parsererror')) {
             throw new Error('xml')
           }
-          const entries = Array.from(xml.querySelectorAll('item, entry')).slice(0, num)
+
+          // get entries
+          const entries = Array.from(xml.querySelectorAll('item, entry')).slice(0, maxEntries)
+
+          // sort entries by date
+          entries.sort((a, b) => {
+            const aDate = a.querySelector('pubDate, updated')?.textContent
+            const bDate = b.querySelector('pubDate, updated')?.textContent
+            if(!aDate) return 1
+            if(!bDate) return -1
+            return new Date(bDate) - new Date(aDate)
+          })
+
+          // display entries
           for(const entry of entries) {
             const title = entry.querySelector('title')?.textContent || '[Title not found]'
             let link = entry.querySelector('link')?.textContent
@@ -177,6 +193,7 @@
             }
             flux.innerHTML += `<a href="${link}">${title}</a>`
           }
+
         } catch(e) {
           let message
           if(e.message === 'xml') {
@@ -186,6 +203,7 @@
           }
           console.info(message)
           flux.classList.add('error')
+          
         } finally {
           flux.dataset.loaded = 'true'
         }
@@ -211,7 +229,7 @@
 
       document.addEventListener('DOMContentLoaded', load)
 
-      setInterval(load, 60 * 60 * 1000);
+      setInterval(load, reloadInterval);
     </script>
   </head>
 
