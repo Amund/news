@@ -161,7 +161,7 @@
       })
 
       const loadFlux = async function(flux) {
-        const url = `proxy/${btoa(flux.dataset.url)}`
+        const url = `proxy.php?url=${btoa(flux.dataset.url)}`
         const name = flux.dataset.name
 
         try {
@@ -203,7 +203,7 @@
           }
           console.info(message)
           flux.classList.add('error')
-          
+
         } finally {
           flux.dataset.loaded = 'true'
         }
