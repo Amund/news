@@ -40,26 +40,31 @@ return [
         'Javascript Weekly' => 'http://javascriptweekly.com/rss',
         'HTML5 Weekly' => 'http://html5weekly.com/rss',
     ],
-    'Développement (techno/lib/framework)' => [
+    'Développement (cms)' => [
         'Wordpress' => 'https://wordpress.org/news/feed/',
         'Wordpress dev' => 'https://developer.wordpress.org/news/feed/',
         'ACF (Wordpress)' => 'https://www.advancedcustomfields.com/blog/feed/',
         'Drupal' => 'https://www.drupal.org/section-blog/2603760/feed',
         'Spip' => 'http://blog.spip.net/spip.php?page=backend',
+    ],
+    'Développement (techno/framework)' => [
         'Symfony' => 'https://feeds.feedburner.com/symfony/blog',
         'Svelte' => 'https://svelte.dev/blog/rss.xml',
         'VueJS' => 'https://medium.com/feed/the-vue-point',
         'React' => 'https://reactjs.org/feed.xml',
         'Rust' => 'https://blog.rust-lang.org/feed.xml',
+        'NodeJS' => 'https://nodejs.org/en/feed/blog.xml',
+        'Docker' => 'https://www.docker.com/blog/feed/',
+        'Biome' => 'https://biomejs.dev/blog/rss.xml',
+        'OXC' => 'https://oxc.rs/feeds/blog-en.atom',
     ],
-    'Logiciels' => [
+    'Releases' => [
         'Ollama' => 'https://github.com/ollama/ollama/releases.atom',
         'LightningCSS' => 'https://github.com/parcel-bundler/lightningcss/releases.atom',
         'Oumi' => 'https://github.com/oumi-ai/oumi/releases.atom',
         'Deno' => 'https://github.com/denoland/deno/releases.atom',
         'Bun' => 'https://github.com/oven-sh/bun/releases.atom',
-        'NodeJS' => 'https://nodejs.org/en/feed/blog.xml',
-        'Docker' => 'https://www.docker.com/blog/feed/',
-        'Google Chrome Releases' => 'http://feeds.feedburner.com/GoogleChromeReleases',
+        'Biome' => 'https://github.com/biomejs/biome/releases.atom',
+        'OXC' => 'https://github.com/oxc-project/oxc/releases.atom',
     ],
 ];
