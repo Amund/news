@@ -160,6 +160,18 @@
       }
     })
 
+    const htmlEncode = (str) => {
+      if (!this.textarea) this.textarea = document.createElement('textarea')
+      this.textarea.innerText = str
+      return this.textarea.innerHTML
+    }
+
+    const htmlAttrEncode = (str) => {
+      str = htmlEncode(str)
+      return str.replace(/"/g, '&quot;').replace(/'/g, '&apos;')
+    }
+
+
     const loadFlux = async function(flux) {
       const url = `proxy.php?url=${btoa(flux.dataset.url)}`
       const name = flux.dataset.name
@@ -191,7 +203,7 @@
           if (link === '') {
             link = entry.querySelector('link').getAttribute('href')
           }
-          flux.innerHTML += `<a href="${link}">${title}</a>`
+          flux.innerHTML += `<a href="${htmlAttrEncode(link)}">${htmlEncode(title)}</a>`
         }
 
       } catch (e) {
