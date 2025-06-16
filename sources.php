@@ -32,6 +32,8 @@ return [
         'Artificiellement intelligent' => 'https://artificiellementintelligent.wordpress.com/feed/',
     ],
     'Développement (général)' => [
+        'MDN' => 'https://developer.mozilla.org/en-US/blog/rss.xml',
+        'web.dev' => 'https://web.dev/static/blog/feed.xml',
         'Mozilla Hacks' => 'https://hacks.mozilla.org/feed/',
         'alsacreations' => 'http://www.alsacreations.com/rss/actualites.xml',
         'css-tricks' => 'https://css-tricks.com/feed/',
