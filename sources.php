@@ -1,49 +1,32 @@
 <?php
 
 return [
-    'Actualités' => [
+    'Actualités Tech' => [
         'Numérama' => 'https://www.numerama.com/feed',
         'Presse-citron' => 'http://www.presse-citron.net/feed/',
         'Le journal du Geek' => 'http://www.journaldugeek.com/feed/',
         'Korben' => 'https://korben.info/feed',
         'Tom\'s Guide' => 'http://www.tomsguide.fr/feeds/rss2/tom-s-guide-fr,20-0.xml',
-        'L\'Usine Digitale' => 'https://www.usine-digitale.fr/rss',
         'Clubic' => 'http://www.clubic.com/articles.rss',
         'Phoronix' => 'https://www.phoronix.com/rss.php',
-        'LinuxFR' => 'http://linuxfr.org/news.atom',
-        'FrAndroid' => 'https://www.frandroid.com/feed/atom',
         'Le monde informatique' => 'http://www.lemondeinformatique.fr/flux-rss/rss.xml',
         'Minimachines' => 'https://www.minimachines.net/feed',
     ],
-    'Actualités (EN)' => [
+    'Actualités Tech (EN)' => [
         'TechCrunch' => 'https://techcrunch.com/feed/',
         'The Verge' => 'https://www.theverge.com/rss/index.xml',
         'The Next Web' => 'https://thenextweb.com/feed',
-        'Wired' => 'https://www.wired.com/feed/rss',
-        'Mashable' => 'https://mashable.com/feeds/rss/all',
-        'The Verge' => 'https://www.theverge.com/rss/index.xml',
-        'Linux.com' => 'https://www.linux.com/feed/',
     ],
     'IA' => [
         'Actu IA' => 'https://www.actuia.com/feed/',
-        'Artificiellement intelligent' => 'https://artificiellementintelligent.wordpress.com/feed/',
-    ],
-    'IA (en)' => [
         'AI News' => 'https://news.smol.ai/rss.xml',
         'The decoder' => 'https://the-decoder.com/feed/',
-        'Towards Data Science' => 'https://towardsdatascience.com/feed',
-        'Machine Learning Mastery' => 'https://machinelearningmastery.com/feed/',
     ],
     'Développement (général)' => [
         'MDN' => 'https://developer.mozilla.org/en-US/blog/rss.xml',
-        'web.dev' => 'https://web.dev/static/blog/feed.xml',
         'Mozilla Hacks' => 'https://hacks.mozilla.org/feed/',
         'alsacreations' => 'http://www.alsacreations.com/rss/actualites.xml',
         'css-tricks' => 'https://css-tricks.com/feed/',
-        'Smashing Magazine' => 'https://www.smashingmagazine.com/feed/',
-        'A list apart' => 'https://alistapart.com/main/feed',
-        'quirksmode' => 'http://www.quirksmode.org/blog/atom.xml',
-        'DailyJS' => 'https://medium.com/feed/dailyjs',
         'Javascript Weekly' => 'http://javascriptweekly.com/rss',
         'HTML5 Weekly' => 'http://html5weekly.com/rss',
     ],
@@ -87,5 +70,8 @@ return [
         'Bun' => 'https://github.com/oven-sh/bun/releases.atom',
         'Biome' => 'https://github.com/biomejs/biome/releases.atom',
         'OXC' => 'https://github.com/oxc-project/oxc/releases.atom',
+    ],
+    'hidden' => [
+        'Boulevard Voltaire' => 'https://www.bvoltaire.fr/feed/',
     ],
 ];

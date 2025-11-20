@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <meta charset="utf-8" />
@@ -134,6 +134,19 @@
       display: none;
     }
 
+    .categorie.hidden {
+      display: none;
+    }
+
+    button {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
     @keyframes loader {
       0% {
         left: 0;
@@ -229,7 +242,9 @@
         for (const [nom, url] of Object.entries(rss)) {
           rssElements.push(`<div class="flux" data-name="${nom}" data-url="${url}"><h3>${nom}<span class="loader"></span></h3></div>`)
         }
-        document.body.innerHTML += `<div class="categorie"><h2>${categorie}</h2>${rssElements.join('')}</div>`
+        const classes = ['categorie']
+        if (categorie === 'hidden') classes.push('hidden')
+        document.body.innerHTML += `<div class="${classes.join(' ')}"><h2>${categorie}</h2>${rssElements.join('')}</div>`
       }
 
       const calls = []
@@ -239,7 +254,13 @@
       await Promise.allSettled(calls)
     };
 
-    document.addEventListener('DOMContentLoaded', load)
+    document.addEventListener('DOMContentLoaded', () => {
+      load()
+
+      const show = document.createElement('button')
+      document.body.appendChild(show)
+      show.addEventListener('click', () => document.querySelector('.hidden')?.classList.remove('hidden'))
+    })
 
     setInterval(load, reloadInterval);
   </script>
